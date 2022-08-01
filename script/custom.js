@@ -1,27 +1,36 @@
 $(function(){
-    $(document).ready(function(){
-        let now = new Date();
-        $("").eq(0).text(now); //전체
-    
-        let month=now.getMonth()+1;//월
-        $('.header_time_month').eq(0).text(month);
-        // document.write(Date() + '<br />');
+
+     // 날짜
+    let nowDate = new Date()
+    let nowDate2 = nowDate.getDate()
+    let nowDay = nowDate.toString().substring(0, 3)
+    let nowDateEng = nowDate.toLocaleString("en-US", { month: "short" });
+    let nowHours = nowDate.getHours()
+    let nowMin = String(nowDate.getMinutes()).padStart(2, "0")
+    let nowapm = nowHours < 12 ? 'am' : 'pm'
+        $('.header_time_day').text(nowDay)
+        $('.header_time_month').text(nowDateEng)
+        $('.header_time_date').text(nowDate2)
+        $('.header_time_hr').text(nowHours)
+        $('.header_time_min').text(nowMin)
+        $('.ampm').text(nowapm)
         
-        let date=now.getDate();//일
-        $('.header_time_date').eq(0).text(date);
-    
-        let day=now.getDay();//요일
-        $('.header_time_day').eq(0).text(day);
-    
-        let hr=now.getHours();//시간
-        $('.header_time_hr').eq(0).text(hr);
-    
-        let min=now.getMinutes();//분
-        $('.header_time_min').eq(0).text(min);
-        
-        // setInterval(() => $(".header_time_min").text(new Date()), 1000);
-    
-    });
+    // 날짜 인터벌
+    setInterval(() => {
+    let nowDate = new Date()
+    let nowDate2 = nowDate.getDate()
+    let nowDay = nowDate.toString().substring(0, 3)
+    let nowDateEng = nowDate.toLocaleString("en-US", { month: "short" });
+    let nowHours = nowDate.getHours()
+    let nowMin = String(nowDate.getMinutes()).padStart(2, "0")
+    let nowapm = nowHours < 12 ? 'am' : 'pm'
+        $('.header_time_day').text(nowDay)
+        $('.header_time_month').text(nowDateEng)
+        $('.header_time_date').text(nowDate2)
+        $('.header_time_hr').text(nowHours)
+        $('.header_time_min').text(nowMin)
+        $('.ampm').text(nowapm)
+    }, 1000);
 
     let today = new Date();   
     let hours = ('0' + today.getHours()).slice(-2); 
@@ -76,7 +85,7 @@ $(function(){
                     $('.right_text_bottom').css('opacity','1')
                 },3000);
                 setTimeout(() => {
-                    $('.message').css('display','none')
+                    $('.message').fadeOut()
                     $('.my_photo').css('display','block')
                     $('.my_picture').css('display','block')
                 }, 6000);
@@ -97,7 +106,6 @@ $(function(){
     });
 
     $(document).on('click','.icon img' ,function(){
-
         $(this).addClass('on')
         setTimeout(() => {
             $(this).removeClass('on')
@@ -111,10 +119,9 @@ $(function(){
         $('.menu_bar').css('display','none')
     })
 
-
     $(window).scroll(function(){
         let windowTop = $(window).scrollTop()
-        let aboutTop = $('.container_about').offset().top - 200
+        let aboutTop = $('.about_right').offset().top - 300
         let portfolioTop_samsung = $('.samsung_page').offset().top - 400
         let portfolioTop_hyundai = $('.hyundai_page').offset().top - 400
         let portfolioTop_drawing = $('.drawing_page').offset().top - 400
@@ -191,6 +198,64 @@ $(function(){
         }, 1000);
     })
 
-    
+// 메인 페이지 앵커
+    $(document).on('click','.picture_text3',function(){
+        let menu_zero = $('.contact').offset().top - 50
+        $('html').animate({scrollTop : menu_zero })
+    })
+
+// 일반 메뉴바_파트
+    $(document).on('click','.navi_link_about',function(){
+        let menuA = $('.container_about ').offset().top - 50
+        $('html').animate({scrollTop : menuA })
+    })
+    $(document).on('click','.navi_link_port',function(){
+        let menuB = $('.container_portfolio').offset().top - 10
+        $('html').animate({scrollTop : menuB })
+    })
+    $(document).on('click','.navi_link_faq',function(){
+        let menuC = $('.faq').offset().top - 100
+        $('html').animate({scrollTop : menuC })
+    })
+    $(document).on('click','.navi_link_contact',function(){
+        let menuD = $('.contact').offset().top - 0
+        $('html').animate({scrollTop : menuD })
+    })
+
+// 반응형 메뉴바_파트
+    $(document).on('click','.menu_bar_about',function(){
+        let menuA = $('.container_about ').offset().top - 50
+        $('html').animate({scrollTop : menuA })
+        $('.menu_bar').css('display','none')
+    })
+    $(document).on('click','.menu_bar_port',function(){
+        let menuB = $('.container_portfolio').offset().top - 10
+        $('html').animate({scrollTop : menuB })
+        $('.menu_bar').css('display','none')
+    })
+    $(document).on('click','.menu_bar_fqa',function(){
+        let menuC = $('.faq').offset().top - 100
+        $('html').animate({scrollTop : menuC })
+        $('.menu_bar').css('display','none')
+    })
+    $(document).on('click','.menu_bar_contact',function(){
+        let menuD = $('.contact').offset().top - 0
+        $('html').animate({scrollTop : menuD })
+        $('.menu_bar').css('display','none')
+    })
+
+// 컨텍트 메뉴바 엥커
+    $(document).on('click','.contact_anchor_about',function(){
+        let menuA = $('.container_about ').offset().top - 50
+        $('html').animate({scrollTop : menuA })
+    })
+    $(document).on('click','.contact_anchor_port',function(){
+        let menuB = $('.container_portfolio').offset().top - 10
+        $('html').animate({scrollTop : menuB })
+    })
+    $(document).on('click','.contact_anchor_faq',function(){
+        let menuC = $('.faq').offset().top - 100
+        $('html').animate({scrollTop : menuC })
+    })
 });
 

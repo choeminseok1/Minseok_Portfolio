@@ -83,6 +83,9 @@ header {
 .header_icon a {
     color: #fff;
 }
+.time_equal {
+    margin: 0px -5px;
+}
 
 /* Message_part */
 
@@ -1020,6 +1023,9 @@ nav {
     font-weight: bold;
     transition: .3s;
 }
+.contact_anchor_resume a {
+    color: orange;
+}
 .contact_right_title {
     font-size: 25px;
     font-weight: bold;
@@ -1608,5 +1614,16 @@ nav {
     }
     .faq_thrid_q {
         width: 80%;
+    }
+}
+@media screen and (max-width:360px) {
+    .menu_bar_text {
+        width: 310px;
+    }
+    .header_left div:nth-child(2){
+        display: none;
+    }
+    .header_left div:nth-child(3){
+        display: none;
     }
 }
