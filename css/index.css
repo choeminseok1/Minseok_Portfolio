@@ -43,9 +43,9 @@ input:focus {
     height: 100vh;
     background: url(../images/main_page/Wallpaper.png) center / cover no-repeat ;
 }
-/* body {
+body {
     overflow: hidden;
-} */
+}
 
 /* header */
 

@@ -89,9 +89,9 @@ $(function(){
                     $('.my_photo').css('display','block')
                     $('.my_picture').css('display','block')
                 }, 6000);
-                // setTimeout(() => {
-                //     $('body').css('overflow','auto')
-                // }, 6000);
+                setTimeout(() => {
+                    $('body').css('overflow','auto')
+                }, 6000);
             }
         }
     })
