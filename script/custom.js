@@ -55,8 +55,8 @@ $(function(){
                 $('.right_text_bottom').append(box1)
                 $('.right_input').val('')
                 $('.right_input').attr('readonly','true')
-        
                 $('.right_text1_top').css('opacity','1')
+                
                 setTimeout(() => {
                     $('.right_text1_mid').css('opacity','1')
                 },1000);

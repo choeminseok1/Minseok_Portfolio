@@ -669,6 +669,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 70px;
+    padding: 0px 20px;
     height: 80%;
     align-items: flex-end;
 }
@@ -686,6 +687,9 @@ nav {
 .js_graph {
     background-color: #F1C021;
 }
+.react_graph {
+    background-color: #61dcfba5;
+}
 .jq_graph {
     background-color: #0676c0;
 }
@@ -696,10 +700,13 @@ nav {
     height: 90%;
 }
 .js_graph.on {
-    height: 30%;
+    height: 40%;
+}
+.react_graph.on {
+    height: 20%;
 }
 .jq_graph.on {
-    height: 40%;
+    height: 70%;
 }
 .about_right_icon img {
     width: 80px;
